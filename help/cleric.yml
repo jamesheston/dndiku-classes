@@ -1,0 +1,17 @@
+---
+body: |
+  <blue>Cleric Help</blue>
+  <blue>===========</blue>
+
+  Level   Skill
+  -----   -----
+  1       Cure Light Wounds Spell
+  3       Armor Spell
+  19      Weapon Focus
+  20      Sanctuary
+  
+
+related:
+  - fighter, thief, wizard
+keywords:
+- cleric

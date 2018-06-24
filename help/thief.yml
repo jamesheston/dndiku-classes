@@ -1,0 +1,22 @@
+# - add "tumble" passive skill at some point which just gives you a save check upon landing to 
+#   reduce/negate fall damage
+# 
+---
+body: |
+  <blue>Thief Help</blue>
+  <blue>==========</blue>
+
+  Level   Skill
+  -----   -----
+  1       Sneak
+  3       Hide
+  8       Appraise
+  9       Read Scroll
+  10      Backstab
+  20      Weapon Focus
+  
+
+related:
+  - cleric, wizard, fighter
+keywords:
+- thief

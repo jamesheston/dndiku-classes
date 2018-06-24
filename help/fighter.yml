@@ -1,0 +1,23 @@
+# add throw skill at lowish level
+# add berserk/rage type skill that makes fighter more powerful but prevents them from fleeing. HIGH LEVEL skill
+# add multi wield?
+# add fight stances?? (offensive vs defensive) maybe not restricted to fighters
+
+---
+body: |
+  <blue>Fighter Help</blue>
+  <blue>===========</blue>
+
+  Level   Skill
+  -----   -----
+  1       Weapons Proficiency
+  3       Shield Proficiency
+  5       Throw
+  10      Weapon Focus
+  20      Berserk
+  
+
+related:
+  - cleric, thief, wizard
+keywords:
+- fighter

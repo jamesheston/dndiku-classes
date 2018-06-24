@@ -1,0 +1,16 @@
+---
+body: |
+  <blue>Wizard Help</blue>
+  <blue>===========</blue>
+
+  Level   Skill
+  -----   -----
+  1       Read Scroll
+  3       Armor Spell
+  20      Weapon Focus
+  
+
+related:
+  - cleric, fighter, thief,  wizard
+keywords:
+- wizard
