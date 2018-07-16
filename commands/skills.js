@@ -7,11 +7,11 @@ module.exports = srcPath => {
   const Logger = require(srcPath + 'Logger');
 
   return {
-    aliases: ['abilities', 'spells', 'practice'],
+    aliases: ['abilities', 'spells'],
     command: state => (args, player) => {
       const say = message => B.sayAt(player, message);
-      // say("<b>" + B.center(80, 'Abilities', 'green'));
-      // say("<b>" + B.line(80, '=', 'green'));
+      say("<b>" + B.center(80, 'Abilities', 'green'));
+      say("<b>" + B.line(80, '=', 'green'));
 
       for (const [ level, abilities ] of Object.entries(player.playerClass.abilityTable)) {
         abilities.skills = abilities.skills || [];
@@ -21,13 +21,12 @@ module.exports = srcPath => {
           continue;
         }
 
-        // say(`\r\n<bold>Level ${level}</bold>`);
-        // say(B.line(50));
+        say(`\r\n<bold>Level ${level}</bold>`);
+        say(B.line(50));
 
         let i = 0;
         if (abilities.skills.length) {
-          say('Skills')
-          say('------')
+          say('\r\n<bold>Skills</bold>');
         }
 
         for (let skillId of abilities.skills) {
@@ -38,21 +37,19 @@ module.exports = srcPath => {
             continue;
           }
 
-          let name = sprintf( skill.name )
+          let name = sprintf("%-20s", skill.name);
           if (player.level >= level) {
-            name = `${name}\n` // can use
-          } else { 
-            name = `<faint>${name}</faint>\n` // cant use
+            name = `<green>${name}</green>`;
           }
-          B.at(player, name)
-          // if (++i % 3 === 0) {
-          //   say();
-          // }
+          B.at(player, name);
+
+          if (++i % 3 === 0) {
+            say();
+          }
         }
 
         if (abilities.spells.length) {
-          say(`Mana  Spell`)
-          say(`----  -----`)
+          say('\r\n<bold>Spells</bold>');
         }
 
         for (let spellId of abilities.spells) {
@@ -63,27 +60,19 @@ module.exports = srcPath => {
             continue;
           }
 
-          let col1 = '' + spell.resource.cost || '?'
-          let line = ''
-          const n = 5 - col1.length
-          for( i = 0;i < n;i++ ) {
-            col1 += ' '
-          }
-
+          let name = sprintf("%-20s", spell.name);
           if (player.level >= level) {
-            line = `${col1} ${spell.name}\n` // can use
-          } else { 
-            line = `${col1} <faint>${spell.name}</faint>\n` // cant use
+            name = `<green>${name}</green>`;
           }
-          B.at(player, line)
+          B.at(player, name);
 
-          // if (++i % 3 === 0) {
-          //   say();
-          // }
+          if (++i % 3 === 0) {
+            say();
+          }
         }
 
         // end with a line break
-        say()
+        say();
       }
     }
   };

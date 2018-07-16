@@ -5,25 +5,6 @@ module.exports = (srcPath) => {
 
   return {
     command : state => (args, player) => {
-
-      /*
-      // Player must be standing to cast
-      */
-      var regenStance = player.getMeta('regenStance')
-      if (regenStance && regenStance !== 'stand' ) {
-        let failMsg = ''
-        
-        if( regenStance === 'rest' ) {
-          failMsg = 'You must stand up first!'
-
-        } else if (regenStance === 'sleep') {
-          failMsg = 'You are fast asleep!'
-
-        }
-        return B.sayAt(player, failMsg)
-      }
-
-
       // match cast "fireball" target
       const match = args.match(/^(['"])([^\1]+)+\1(?:$|\s+(.+)$)/);
       if (!match) {
